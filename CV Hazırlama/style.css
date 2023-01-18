@@ -1,0 +1,65 @@
+.cv{
+      width: 1000px;
+      height: 1200px;
+      display: flex;
+    }
+    .solKolon {
+      width: 275px;
+      height:100%;
+      background-color: rgb(173, 26, 26);
+      margin-left: 50px;
+    }
+    
+    
+    .iletisim {
+      text-align:left;
+      font-size:30px;
+      color: black;
+      margin-top: 100px;
+      
+    }
+
+    .egitim {
+      text-align:left;
+      font-size:30px;
+      color: black;
+      margin-top: 100px;
+      
+    }
+    .yetenekler{
+      text-align:left;
+      font-size:30px;
+      color: black;
+      margin-top: 100px;
+     
+    }
+
+    .hakkimda {
+      text-align:left;
+      font-size:30px;
+      color: black;
+      margin-top: 100px;
+      
+    }
+    .isDeneyimiDegisim {
+      text-align:left;
+      font-size:30px;
+      color: black;
+      margin-top: 100px;
+      
+    }
+    .adSoyadDegisim {
+      text-align:center;
+      font-size:70px;
+      color: white;
+      margin-top: 100px;
+    }
+    .unvan {
+      text-align: center;
+      font-size: 70px;
+      color: white;
+      margin-top: 10px;
+    }
+    hr{
+      border-color: black;
+    }

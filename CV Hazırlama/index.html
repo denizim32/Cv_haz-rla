@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>CV Hazırlama Aracı</title>
+  </head>
+  <body>
+    <div
+      class="arac"
+      style="
+        margin-bottom: 1px;
+        width: 1800px;
+        height: 80px;
+        border: black 1px solid;
+        text-align: center;
+      "
+    >
+      <h1>CV Hazırlama Aracı</h1>
+    </div>
+    <div
+      class="sayfa"
+      style="display: flex; width: 1800px; height: 1500px; border: black 1px solid"
+    >
+      <div
+        class="metin"
+        style="
+          padding: 5px;
+          width: 520px;
+          height: 1480px;
+          background-color: rgb(175, 175, 175);
+          border: black 1px solid;
+        "
+      >
+        <h2 style="text-align: center">Metin İçerikleri</h2>
+        <hr />
+        <table>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İsim Kutusu</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="adSecim">Ad Soyad : </label></td>
+            <td><input type="text" id="adSecim" onkeyup="MetinDoldur(addEventListener)" /></td>
+          </tr>
+          <tr>
+            <td><label for="unvanSecim">Ünvan : </label></td>
+            <td>
+              <input type="text" id="unvanSecim" onkeyup="MetinDoldur()" />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İletişim Bilgileri</b> <br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="telSecim">Telefon : </label></td>
+            <td><input type="text" id="telSecim" onkeyup="MetinDoldur()" /></td>
+          </tr>
+          <tr>
+            <td><label for="mailSecim">Mail : </label></td>
+            <td>
+              <input type="text" id="mailSecim" onkeyup="MetinDoldur()" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="webSecim">Web : </label></td>
+            <td><input type="text" id="webSecim" onkeyup="MetinDoldur()" /></td>
+          </tr>
+          <tr>
+            <td><label for="adresSecim">Adres : </label></td>
+            <td>
+              <textarea
+                name=""
+                onkeyup="MetinDoldur()"
+                id="adresSecim"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Eğitim Bilgileri</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="egitimAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okulSayisi">Okul Sayısı : </label></td>
+            <td>
+              <select
+                name="okulSayisi"
+                id="okulSayisi"
+                onchange="OkulSayisiSec()"
+              >
+                <option value="seciniz">Seçiniz</option>
+                <option value="okul1">1</option>
+                <option value="okul2">2</option>
+                <option value="okul3">3</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="okul1" id="okulLabel1" hidden>1. Okul</label></td>
+            <td>
+              <input type="text" id="okul1" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama1"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okul2" id="okulLabel2" hidden>2. Okul</label></td>
+            <td>
+              <input type="text" id="okul2" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama2"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="okul3" id="okulLabel3" hidden>3. Okul</label></td>
+            <td>
+              <input type="text" id="okul3" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="okulAciklama3"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Yetenekler</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onblur="MetinDoldur()"
+                id="yetenekAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="yetenekSayisi">Yetenek Sayısı : </label></td>
+            <td>
+              <select
+                name="yetenekSayisi"
+                id="yetenekSayisi"
+                onchange="YetenekSayisiSec()"
+              >
+                <option value="seciniz">Seçiniz</option>
+                <option value="yetenek1">1</option>
+                <option value="yetenek2">2</option>
+                <option value="yetenek3">3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek1" id="yetenekLabel1" hidden>1. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek1" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama1"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek2" id="yetenekLabel2" hidden>2. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek2" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama2"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="yetenek3" id="yetenekLabel3" hidden>3. Yetenek</label>
+            </td>
+            <td>
+              <input type="text" id="yetenek3" onkeyup="MetinDoldur()" hidden />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="yetenekAciklama3"
+                onkeyup="MetinDoldur()"
+                placeholder="Açıklama"
+                hidden
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>Hakkımda</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="hakkimdaAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-decoration: underline">
+              <br />
+              <b>İş Deneyimi</b><br /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>Açıklama :</td>
+            <td>
+              <textarea
+                onkeyup="MetinDoldur()"
+                id="deneyimAciklama"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+      </div>
+      <div
+        class="gorunus"
+        style="
+        margin-left: 1px;
+        padding: 5px;
+          width: 580px;
+          height: 1480px;
+          background-color: rgb(209, 209, 209);
+          border: black 1px solid;
+        "
+      >
+        <h2 style="text-align: center">Görünüş</h2>
+    <hr/>
+    <table>
+      <tr>
+        <td style="text-decoration: underline;">
+        <br>
+          <b>Renkler</b>
+      </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="arkaPlanRenkSecim">Arkaplan Rengi:</label>
+        </td>
+        <td><input type="color" id="arkaPlanRenk" value="#FA0000"></td>
+        <td></td>        
+      </tr>
+      <tr>
+        <td><label for="solKolonRenkSecim">Sol Kolon Rengi:</label></td>
+        <td><input type="color" id="solKolonRenk"></td>
+      </tr>
+      <tr>
+        <td><label for="isimKutusuRenkSecim">İsim Kutusu Rengi:</label></td>
+        <td><input type="color" id="isimKutusuRenk"></td>
+      </tr>
+
+      <tr>
+        <td><label for="isimKutusuYaziRenkSecim">İsim Kutusu Yazı Rengi:</label></td>
+        <td><input type="color" id="isimKutusuYaziRenk"></td>
+      </tr>
+
+      <tr>
+        <td style="text-decoration: underline;" >
+        <br>
+          <b>Yazı Tipi</b>
+      </td>
+      </tr>
+
+      <tr>
+        <td><label for="yaziTipi">Yazı Tipi:</label></td>
+        <td><select name="yaziTipi" id="yaziTipi" onchange="YaziTipiDegistir()">
+          <option value="seciniz">Seçiniz</option>
+          <option value="yaziTipi1">Times New Roman</option>
+          <option value="yaziTipi2">Courier New</option>
+          <option value="yaziTipi3">Lucida Handwriting</option>
+        </select></td>
+      </tr>
+
+      <tr>
+        <td style="text-decoration: underline;">
+        <br>
+        <b>Fotoğraf</b>
+      </td>
+      </tr>
+
+      <tr>
+        
+        <td><label for="fotografCercevesi"></label>Fotoğraf Çerçevesi Şekli :</td>
+        <td><select name="fotografCercevesi" id="fotografCercevesi" onchange="FotografCerceveDegistir(event)">
+          <option value="seciminizFotografTip">Seçiminiz</option>
+          <option value="köseliFotografTip" id="birinciModel">Köşeli</option>
+          <option value="ovalFotografTip" id="ikinciModel">Oval</option>
+          <option value="yuvarlakFotografTip" id="ücüncüModel">Yuvarlak</option>
+        </select></td>
+        </tr>
+        <td style="text-decoration: underline;">
+          <br>
+          <b>Başlık Altı Çizgileri
+          </b>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="cizgiRengi">Çizgi Rengi:</label></td>
+        <td><input type="color" id="cizgiRengi"></td>
+      </tr>
+
+      <tr>
+        <td><label for="cizgiSekli">Çizgi Şekli:</label></td>
+        <td><select name="cizgiSekli" id="cizgiSekli">
+          <option value="secinizCizgiSekli">Seçiniz</option>
+          <option value="cizgiSekli1">Noktalı</option>
+          <option value="cizgiSekli2">Çizgili</option>
+          <option value="cizgiSekli3">Düz</option>
+        </select></td>
+      </tr>
+
+    </table>
+    <br/> <br/>
+          </div>
+          <form>
+        <div class="cv" id="cv" style="margin-left: 10px; width: 1000px; height:1000px; border: black 5px solid; background-color:rgb(221, 46, 46)">
+            
+          <div class="solKolon" id="solKolon">
+            <div class="fotografCercevesi" id="fotografDiv" style="margin:100px 100px 100px 60px; width: 140px; height: 140px; border: 1px solid black;">
+              <div class="fotografYazisi" style="margin-top: 50px; margin-left: 50px; margin-right: 50px;">Fotoğraf          
+              </div>
+            </div>
+            <div class="iletisim" id="iletisim">İLETİŞİM
+              <div class="telefon" ><p id="telSecim"></p></div>
+            </div>
+            <hr></hr>
+              <div class="egitim" id="egitim">EĞİTİM</div>
+              <hr></hr>
+              <div class="yetenekler" id="yetenekler">YETENEKLER</div>
+            <hr></hr>
+          </div>
+          <div class="sagKolon" id="sagKolon">
+            <div class="genel" style="margin: top 10px; margin-left: 10px; padding: 5px; margin-right: 10px; margin-bottom: 10px; background-color: rgb(80, 79, 79);">
+            <div class="sonuc" style="text-decoration: bold; color: white; margin:100px 100px 10px 200px;"><p id="sonuc">{AD SOYAD}</p></div>
+            <div class="sonuc2" style=" text-decoration: bold; color: white; margin:0px 100px 100px 210px;"><p id="sonuc2">{UNVAN}</p></div>
+          </div>
+              <div class="hakkimda" id="hakkimda">HAKKIMDA</div>
+              <hr></hr>
+              <div class="isDeneyimiDegisim" id="isDeneyimDegisim">İŞ DENEYİMİ</div>
+              <hr></hr>
+          </div>
+        </div>
+      </form>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      function YaziTipiDegistir() {
+        //TODO : Yazı tipi değiştirme fonksiyonu
+        var yaziTipi = document.getElementById("yaziTipi").value;
+        if (yaziTipi == "yaziTipi1") {
+          document.getElementById("cv").style.fontFamily = "Times New Roman";
+        } else if (yaziTipi == "yaziTipi2") {
+          document.getElementById("cv").style.fontFamily = "Courier New";
+        } else if (yaziTipi == "yaziTipi3") {
+          document.getElementById("cv").style.fontFamily = "Arial";
+        }
+      }
+
+      function FotografCerceveDegistir(event){
+        //TODO :Çerçeve değiştirme fonksiyonu
+        var fotografCerceve=event.target.value;
+        if(fotografCerceve=="köseliFotografTip") {
+          document.getElementById("fotografDiv").style.borderRadius="10px 10px 10px 10px";}
+        else if(fotografCerceve=="ovalFotografTip") {
+          document.getElementById("fotografDiv").style.borderRadius="50px 50px 50px 50px";
+        }
+        else if(fotografCerceve=="yuvarlakFotografTip") {
+          document.getElementById("fotografDiv").style.borderRadius="30px 60px 60px 30px";
+        }
+      }
+
+      function MetinDoldur(event){
+        const input = document.querySelector("#adSecim");
+        const sonuc = document.querySelector("#sonuc");
+        input.addEventListener("change", (e) => {
+
+          sonuc.innerHTML = e.target.value;
+})
+}  
+
+function MetinDoldur(event){
+  const input = document.querySelector("#unvanSecim");
+  const sonuc2 = document.querySelector("#sonuc2");
+  input.addEventListener("change",(e)=>{
+    sonuc2.innerHTML=e.target.value;
+  })
+}
+function MetinDoldur(event){
+  const input = document.querySelector("#telSecim");
+  const sonuc3 = document.querySelector("#sonuc3");
+  input.addEventListener("change",(e)=>{
+    sonuc3.innerHTML=e.target.value;
+  })
+}
+
+function MetinDoldur(event){
+  const input = document.querySelector("#mailSecim");
+  const sonuc4 = document.querySelector("#sonuc4");
+  input.addEventListener("change",(e)=>{
+    sonuc4.innerHTML=e.target.value;
+  })
+}
+
+function MetinDoldur(event){
+  const input = document.querySelector("#webSecim");
+  const sonuc5 = document.querySelector("#sonuc5");
+  input.addEventListener("change",(e)=>{
+    sonuc5.innerHTML=e.target.value;
+  })
+}
+
+function MetinDoldur(event){
+  const input = document.querySelector("adresSecim");
+  const sonuc6 = document.querySelector("#sonuc6");
+  input.addEventListener("change",(e)=>{
+    sonuc6.innerHTML=e.target.value;
+  })
+}
+
+
+
+    </script>
+</body>
+</html>
